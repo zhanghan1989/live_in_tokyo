@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require vendor/jquery.anystretch.min
 //= require turbolinks
 //= require_tree .

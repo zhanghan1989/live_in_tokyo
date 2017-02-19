@@ -1,10 +1,29 @@
-<div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+<div class="home-banner" data-stretch="<%= image_url "home-banner-bg.jpg" %>">
+  <div class="center hero-unit">
+    <h1>Welcome to the Sample App</h1>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
+  <div class="banner-inner container clearfix">
+    <h1>It's Party Time!</h1>
+    <p class="subheading">到时聚聚，聊聊程序</p>
+    <div class="home-banner-links">
+      <%= link_to "发布新活动", "#", class: "banner-btn btn" %>
+    </div>
+  </div>
 </div>
+<div class="issue-list-header">
+  <div class="container clearfix">
+    <h1 class="issue-list-heading">所有活动都在下面了...</h1>
+  </div>
+</div>
+
+<div class="container clearfix">  
+  <%= render partial: 'issue_list', locals: { issues: @issues } %>
+</div>
+
+<script>
+  $('.home-banner').anystretch();
+</script>
+<!--
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+-->
