@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'comments/create'
+
   get 'sessions/new'
 
   root 'static_pages#home'
@@ -14,6 +17,20 @@ Rails.application.routes.draw do
   
   resources :users
 
+  resources :issues
+  #get 'issues/new' => 'issues#new'
+  #get 'issues' => 'issues#index', :as => 'issues'
+  #get 'issues/:id' => 'issues#show', :as => 'issue'
+  #delete 'issues/:id' => 'issues#destroy'
+  #post '/issues' => 'issues#create'
+  #get 'issues/:id/edit' => 'issues#edit', :as => 'edit_issue'
+  #patch 'issues/:id' => 'issues#update'
+
+  # comments
+  post '/issues/:issue_id/comments' => "comments#create"
+
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

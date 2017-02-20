@@ -48,11 +48,11 @@
     font-family: "museo-sans-condensed";
     border-radius: 5px;
     color: #fff;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.3);
     margin-left: 8px;
     border: 1px solid transparent;
     &:hover {
-      border: 1px solid rgba(0,0,0,0.2);
+      border: 1px solid rgba(0,0,0,0.5);
     }
   }
 }
@@ -132,4 +132,11 @@
       }
     }
   }
+}
+
+.icon-muted {
+  font-size: 25px;
+  position: relative;
+  top: -20px;
+  color: #c9c9c9;
 }

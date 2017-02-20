@@ -8,15 +8,17 @@
     </div>
     <div class="body">
       <h5 class="title">
-        <%= link_to i[:title], "#" %>
+        <%= link_to i.title, issue_path(i) %>
       </h5>
       <a class="read-more" href="#">read</a>
       <span class="meta-data">
         <a href="/happypeter">happypeter</a>
+        <%= time_ago_in_words(i.created_at) %> ago
       </span>
     </div>
     <div class="issue-comment-count">
-        <%= link_to i[:comments], "#" %>
+      <i class="fa fa-comments icon-muted"></i>
+      <%= link_to i.comments.count, i %>
     </div>
   </article>
   <% end %>
