@@ -267,7 +267,7 @@ input {
 
 .btn-primary {
   color: white;
-  background: #c0865e;
+  //background: #c0865e;
   border-color: #b9784c;
   &:hover {
     background-color: #b9784c;
@@ -298,6 +298,15 @@ input {
 
 // form.css
 form {
+  .error {
+    margin: 5px 0 9px 0;
+    color: #DB8A14;
+  }
+  * {
+    &:focus {
+      outline: none;
+    }
+  }
   input {
     font-size: 21px;
     width: 100%;
@@ -318,4 +327,7 @@ form {
   dd {
     margin: 0;
   }
+
 }
+
+

@@ -38,9 +38,10 @@
 }
 
 .home-banner-links {
-  position: absolute;
-  right: 160px;
-  top: 194px;
+  //position: absolute;
+  position: relative;
+  //right: 160px;
+  //top: 194px;
   .banner-btn {
     padding: 15px 15px;
     font-size: 1.2em;
@@ -68,6 +69,7 @@
   .issue-list-heading {
     font-size: 2em;
     font-weight: normal;
+    text-align: center;
   }
 }
 

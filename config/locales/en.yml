@@ -21,3 +21,13 @@
 
 en:
   hello: "Hello world"
+  form:
+    Email: Email
+    Password: Password
+  navbar: 
+    about: about
+    help: help
+    loginin: Log in
+    signup:  sign up
+  home:
+    signup: sign up now !
