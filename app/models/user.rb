@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
+  
+  has_many :comments
+  has_many :issues
+
   before_save { self.email = email.downcase }
+
+
 
   validates :name, presence: true, length: { maximum: 20 }
 
@@ -40,6 +46,12 @@ class User < ActiveRecord::Base
   # ユーザーのログイン情報を破棄する
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+
+  def avatar
+    gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=retro"
   end
 
 end

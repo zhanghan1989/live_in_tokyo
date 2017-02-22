@@ -11,15 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220225658) do
+ActiveRecord::Schema.define(version: 20170222222406) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
-    t.string   "username"
-    t.string   "email"
     t.integer  "issue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "issues", force: :cascade do |t|

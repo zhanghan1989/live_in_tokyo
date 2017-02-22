@@ -11,6 +11,7 @@ zh-CN:
     signup:  注册
   home:
     signup: 马上注册！
+    ago: 前
   activerecord:
     errors:
       messages:

@@ -35,8 +35,8 @@ Rails.application.routes.draw do
   #patch 'issues/:id' => 'issues#update'
 
   # comments
-  post '/issues/:issue_id/comments' => "comments#create"
-
+  #post '/issues/:issue_id/comments' => "comments#create"
+  resources :comments, only:[:create]
 
   
   # The priority is based upon order of creation: first created -> highest priority.

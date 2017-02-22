@@ -11,6 +11,7 @@ ja:
     signup: 無料登録
   home:
     signup: まずは　無料登録
+    ago: 前
 
   activerecord:
     errors:
