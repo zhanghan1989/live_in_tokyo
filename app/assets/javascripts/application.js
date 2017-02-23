@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.atwho
+//= require vendor/jquery.hotkeys
 //= require bootstrap
 //= require vendor/jquery.anystretch.min
 //= require turbolinks
