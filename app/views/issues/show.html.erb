@@ -15,7 +15,8 @@
         <div class="heading">
           <h5 class="name"><a href="#">happypeter</a></h5>
         </div>
-        <%= @issue.content %>
+        <!--<%= @issue.content %>-->
+        <%= markdown @issue.content %>
       </div>
     </article>
     <% @comments.each do |c| %>

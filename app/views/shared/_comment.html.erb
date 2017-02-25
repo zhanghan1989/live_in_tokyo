@@ -12,6 +12,7 @@
       <%= time_ago_in_words c.created_at %> <%= t("home.ago")%>
     </span>
   </div>
-  <%= c.content %>
+  <!--<%= c.content %>-->
+  <%= markdown c.content %>
 </div>
 </div>
