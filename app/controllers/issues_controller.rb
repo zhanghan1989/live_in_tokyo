@@ -1,7 +1,12 @@
 class IssuesController < ApplicationController
 
   def new
-    @issue = Issue.new
+    if not current_user
+      flash[:success] = "log in first！"
+      redirect_to login_path
+    else
+      @issue = Issue.new
+    end
   end
 
   def show
@@ -32,6 +37,6 @@ class IssuesController < ApplicationController
 
   private
   def issue_params
-    params.require(:issue).permit(:title, :content)
+    params.require(:issue).permit(:title, :content, :user_id)
   end
 end

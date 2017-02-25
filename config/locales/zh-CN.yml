@@ -1,9 +1,12 @@
 zh-CN:
   hello: 你好
   Log in: 登录
+  release: 发表
   form:
     Email: 邮箱
     Password: 密码
+    Title: 标题
+    Content: 内容
   navbar: 
     about: 关于
     help: 帮助

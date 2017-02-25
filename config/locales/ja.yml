@@ -1,9 +1,12 @@
 ja:
   hello: こんにちは
   Log in: ログイン
+  release:  発表
   form:
     Email: メールアドレス
     Password: パスワード
+    Title: タイトル
+    Content: 内容
   navbar: 
     about: 51yueについて
     help: ヘルプ
