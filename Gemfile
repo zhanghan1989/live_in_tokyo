@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 gem 'bootstrap-sass', '3.3.6'
@@ -53,4 +52,5 @@ end
 #本番 (production) 環境
 group :production do
   gem 'pg', '0.18.4'
+  gem 'rails_12factor', '0.0.2'
 end
