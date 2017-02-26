@@ -53,7 +53,7 @@ textarea {
 //   float: left;
 //   padding-left: 0;
 //   line-height: 80px;
-//   font-size: 40px;
+//   font-size: 50px;
 // }
 // .nav.left {
 //   float: left;
@@ -78,10 +78,6 @@ textarea {
 //   background: #fff;
 // }
 
-
-.aaa{
-  height: 1000px
-}
 
 /* header */
 #logo {
@@ -330,4 +326,9 @@ form {
 
 }
 
-
+@media (device-width:375px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone 6 */
+.class{}
+}
+@media (device-width:414px) and (-webkit-min-device-pixel-ratio:3.0){/* 兼容iphone6 plus */
+.class{}
+}
