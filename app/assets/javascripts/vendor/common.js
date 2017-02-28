@@ -4,10 +4,11 @@
     $('.splash').css({
       'background-position': '0px -'+(top/3).toFixed(2)+'px'
     });
-    if(top > 50)
-      $('.navbar').removeClass('static_pages-home');
+
+    if(top > 50) 
+      $('#static_pages-home > .navbar').removeClass('navbar-transparent');
     else
-      $('.navbar').addClass('static_pages-home');
+      $('#static_pages-home > .navbar').addClass('navbar-transparent');
   });
 
   $("a[href='#']").click(function(e) {

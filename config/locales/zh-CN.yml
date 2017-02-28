@@ -15,6 +15,9 @@ zh-CN:
   home:
     signup: 马上注册！
     ago: 前
+    slogan: 欢迎来到51yue.jp !
+    contribute: 发布新活动
+    issues: 所有活动都在下面了...
   activerecord:
     errors:
       messages:

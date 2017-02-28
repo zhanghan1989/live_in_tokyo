@@ -15,7 +15,9 @@ ja:
   home:
     signup: まずは　無料登録
     ago: 前
-
+    slogan: Welcome to the 51yue.jp !
+    contribute: イベント投稿
+    issues: イベント情報一覧…
   activerecord:
     errors:
       messages:

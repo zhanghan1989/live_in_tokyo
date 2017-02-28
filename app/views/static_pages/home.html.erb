@@ -1,6 +1,54 @@
+<header class="navbar navbar-fixed-top navbar-inverse clearfix navbar-transparent">
+  <div class="splash" style="background-position: 0px 0px;">
+    <div class="container">
+      <nav>
+        <a class="navbar-brand" href="/">
+          <%= link_to "51yue", root_path, id: "logo" %>
+        </a>
+
+        <ul class="nav navbar-nav navbar-left">
+
+          <li><%= link_to t("navbar.about"), about_path %></li>
+
+          <li><%= link_to t("navbar.help"), help_path %></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+          <li><%= link_to current_user.name, current_user %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+          <% else %>
+          <li><%= link_to t("navbar.login"), login_path %></li>
+          <li><%= link_to t("navbar.signup"), signup_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+
+
+
 <div class="home-banner" data-stretch="<%= image_url "home-banner-bg.jpg" %>">
   <div class="center hero-unit">
-    <h1>Welcome to the 51yue.jp</h1>
+    <h1><%= t("home.slogan") %></h1>
 
     <% if logged_in? %>
 
@@ -17,9 +65,9 @@
 </div>
 <div class="issue-list-header">
   <div class="container clearfix">
-    <div class="issue-list-heading">所有活动都在下面了...</div>
+    <div class="issue-list-heading"><%= t("home.issues") %></div>
     <div class="home-banner-links">
-      <%= link_to "发布新活动", "/issues/new", class: "banner-btn btn" %>
+      <%= link_to t("home.contribute"), "/issues/new", class: "banner-btn btn" %>
     </div>
   </div>
 </div>
