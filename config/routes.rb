@@ -10,14 +10,13 @@ Rails.application.routes.draw do
   get  '/contact', to: 'static_pages#contact'
 
 
-
+  #resources :users, only: [:create]
   #get "signup" => "users#new", :as => "signup"
   get  '/signup',  to: 'users#new'
-  #resources :users, only: [:create]
   post '/signup',  to: 'users#create'
   get 'users/:id' => 'users#show', :as => 'user'
-
-
+  get 'users/:id/edit' => 'users#edit', :as => 'edit_user'
+  get 'users' => 'users#index', :as => 'users'
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
