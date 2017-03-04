@@ -7,6 +7,8 @@ gem 'bcrypt', '3.1.11'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'jquery-atwho-rails'
 gem 'redcarpet'
+gem 'will_paginate',           '3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
