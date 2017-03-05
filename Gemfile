@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+gem 'puma', '3.4.0'
 gem 'bootstrap-sass', '3.3.6'
 gem 'bcrypt', '3.1.11'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
