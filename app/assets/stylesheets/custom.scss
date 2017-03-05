@@ -355,6 +355,10 @@ input, textarea, select, .uneditable-input {
 }
 
 
+.alert{
+  padding-top: 15px;
+}
+
 @media (device-width:375px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone 6 */
   .class{}
 }

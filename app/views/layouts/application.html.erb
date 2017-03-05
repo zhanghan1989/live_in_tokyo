@@ -11,13 +11,16 @@
 <body id="<%= params[:controller] + '-' + params[:action] %>">
 
   <% if params[:action] != 'home' %>
-    <%= render 'layouts/header' %>
-  <% end %>
-
+  <%= render 'layouts/header' %>
   <% flash.each do |key, value| %>
   <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
+  <% end %>
+
+
+
   <%= yield %>
+
   <%= render 'layouts/footer' %>
   <%= debug(params) if Rails.env.development? %>
 
