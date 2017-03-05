@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     #分页显示：
     #@users = User.paginate(page: params[:page])
     #只显示已激活用户的代码模板
-    @users = User.where(activated: FILL_IN).paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
 
   def destroy
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    redirect_to root_url and return unless FILL_IN
+    #redirect_to root_url and return unless activated
   end
 
   def new
