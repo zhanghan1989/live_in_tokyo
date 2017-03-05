@@ -188,6 +188,10 @@ footer {
 aside {
   section.user_info {
     margin-top: 20px;
+    margin-left: 20px;
+  }
+  a{
+    margin-left: 20px;
   }
   section {
     padding: 10px 0;
@@ -327,7 +331,7 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
-.signup-form-container, .login-form-container{
+.signup-form-container, .login-form-container, .forgot-password-container{
   width: 670px;
   margin: 50px auto;
   border:1px solid #ddd;
