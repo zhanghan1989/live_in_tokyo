@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
   
   has_many :comments
   has_many :issues
 
   before_save { self.email = email.downcase }
+  before_create :create_activation_digest
 
 
 
@@ -38,7 +39,9 @@ class User < ActiveRecord::Base
   end
 
   # 渡されたトークンがダイジェストと一致したらtrueを返す
-  def authenticated?(remember_token)
+  #def authenticated?(remember_token)
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
@@ -53,5 +56,30 @@ class User < ActiveRecord::Base
     gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=retro"
   end
+  
+  # 激活账户
+  def activate
+    # update_attribute(:activated,    true)
+    # update_attribute(:activated_at, Time.zone.now)
+    update_columns(activated: FILL_IN, activated_at: FILL_IN)
+  end
 
-end
+  # 发送激活邮件
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  private
+
+    # 把电子邮件地址转换成小写
+    def downcase_email
+      self.email = email.downcase
+    end
+
+    # 创建并赋值激活令牌和摘要
+    def create_activation_digest
+      self.activation_token  = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end
+
+  end

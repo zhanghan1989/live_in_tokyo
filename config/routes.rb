@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   #post '/issues/:issue_id/comments' => "comments#create"
   resources :comments, only:[:create]
 
+  resources :account_activations, only: [:edit]
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
