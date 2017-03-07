@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # ssl証明書発行用
-  get '/.well-known/acme-challenge/:id' => 'static_pages#letsencrypt'
+  get ".well-known/acme-challenge/:id' => 'static_pages#letsencrypt"
 
   get 'password_resets/new'
 
