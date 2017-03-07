@@ -13,4 +13,8 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def letsencrypt
+      render text: "jXbXyuhnDULtRvDdDJSyXww78GxwBFAUAs_xHPZD4Bg.jSnYGXTvSCXx7AwLpjYYeGtIDS5dcEl_2wjnFsJe6hs"
+  end
 end
