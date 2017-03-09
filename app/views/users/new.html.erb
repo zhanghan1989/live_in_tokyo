@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<h1><%= t("signup") %></h1>
 
 <div class="signup-form-container clearfix">
   <div class="signup-form">
@@ -7,7 +7,7 @@
     <!--<%= render 'shared/error_messages' %>-->
 
     <dl class="form">
-        <dt><%= f.label :name %></dt>
+        <dt><%= f.label t("form.Name") %></dt>
         <dd><%= f.text_field :name, class: 'form-control' %></dd>
         <% if @user.errors[:name].any? %>
         <dd class="error"><%= @user.errors[:name][0] %></dd>
@@ -15,7 +15,7 @@
     </dl>
 
     <dl class="form">
-        <dt><%= f.label :email %></dt>
+        <dt><%= f.label t("form.Email") %></dt>
         <dd><%= f.text_field :email, class: 'form-control' %></dd>
         <% if @user.errors[:email].any? %>
         <dd class="error"><%= @user.errors[:email][0] %></dd>
@@ -24,7 +24,7 @@
 
 
     <dl class="form">
-        <dt><%= f.label :password %></dt>
+        <dt><%= f.label t("form.Password") %></dt>
         <dd><%= f.password_field :password, class: 'form-control' %></dd>
         <% if @user.errors[:password].any? %>
         <dd class="error"><%= @user.errors[:password][0] %></dd>
@@ -32,14 +32,15 @@
     </dl>
 
     <dl class="form">
-        <dt><%= f.label :password_confirmation, "Confirmation" %></dt>
+        <dt><%= f.label t("form.Confirmation") %></dt>
         <dd><%= f.password_field :password_confirmation, class: 'form-control' %></dd>
         <% if @user.errors[:password_confirmation].any? %>
         <dd class="error"><%= @user.errors[:password_confirmation][0] %></dd>
         <% end %>
     </dl>
 
-    <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <%= f.submit t("signup"), class: "btn btn-primary" %>
     <% end %>
+    このページは、SSLによって保護されています。(数据库中不存储明文密码)
 </div>
 </div>

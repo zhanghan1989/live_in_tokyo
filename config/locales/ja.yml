@@ -2,11 +2,15 @@ ja:
   hello: こんにちは
   Log in: ログイン
   release:  発表
+  signup: 無料登録
   form:
+    Name: ユーザー名
     Email: メールアドレス
     Password: パスワード
+    Confirmation: パスワード確認
     Title: タイトル
     Content: 内容
+    Create my account: 
   navbar: 
     about: 51yueについて
     help: ヘルプ

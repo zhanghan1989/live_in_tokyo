@@ -1,10 +1,24 @@
 <!--<% provide(:title, @user.name) %> -->
 <div class="row">
-  <aside class="col-md-3">
+  <aside class="col-md-4">
     <section class="user_info">
-      <%= gravatar_for @user %>
+      <%= gravatar_for @user, size: 110%>
       <h1><%= @user.name %></h1>
     </section>
+    <% if current_user && current_user == @user %>
     <a href= "http://cn.gravatar.com/" >更换头像</a> 
+    <%= link_to "关于", help_path %>
+    <% end %>
   </aside>
+
+  <div class="col-md-8">
+    <% if @user.issues.any? %>
+      <h3>已发布的活动 (<%= @user.issues.count %>)</h3>
+      <ol class="issues">
+        <%= render @issues %>
+      </ol>
+      <%= will_paginate @issues %>
+    <% end %>
+  </div>
+
 </div>

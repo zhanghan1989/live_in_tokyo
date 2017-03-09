@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     #redirect_to root_url and return unless activated
+    @issues = @user.issues.paginate(page: params[:page])
   end
 
   def new
@@ -36,8 +37,9 @@ class UsersController < ApplicationController
       #UserMailer.account_activation(@user).deliver_now
       #以上一行封装到send_activation_email方法
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      flash[:info] = "ご入力いただいたメールアドレス宛に登録完了かメールを送信させていただいております。 
+ご確認ください。"
+      redirect_to signup_url
     else
       render 'new'
     end
@@ -66,7 +68,7 @@ class UsersController < ApplicationController
   # ログイン済みユーザーかどうか確認
   def logged_in_user
     unless logged_in?
-      flash[:danger] = "Please log in."
+      flash[:danger] = "ログインする必要があります。"
       redirect_to login_url
     end
   end

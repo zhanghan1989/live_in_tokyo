@@ -10,9 +10,9 @@
       <h5 class="title">
         <%= link_to i.title, issue_path(i) %>
       </h5>
-      <a class="read-more" href="#">read</a>
+      <!-- <a class="read-more" href="#">read</a> -->
       <span class="meta-data">
-        <%= link_to i.user.name, '#' %>
+        <%= link_to i.user.name, i.user %>
         <%= time_ago_in_words(i.created_at) %> <%= t("home.ago")%>
       </span>
     </div>
