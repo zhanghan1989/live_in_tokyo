@@ -1,7 +1,7 @@
 <div class="issue-heading">
   <div class="container">
     <%= @issue.title %>
-    <% if (current_user && current_user == @issue.user) || current_user.admin == true%>
+    <% if (current_user && current_user == @issue.user) || (logged_in? && current_user.admin) == true%>
     <%= link_to 'Destroy', issue_path(@issue), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
     <%= link_to 'edit', edit_issue_path(@issue), class: "btn btn-primary"%>
     <% end %>
